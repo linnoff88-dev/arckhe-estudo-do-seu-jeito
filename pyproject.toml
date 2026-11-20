@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "estudo-do-seu-jeito"
+version = "0.1.0"
+description = "Ajudante de quem ensina: guia de estudo no jeito do aluno, conferido na fonte, com teste dos métodos às claras. Python puro."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+license = { text = "MIT" }
+
+[project.optional-dependencies]
+testes = ["pytest>=8"]
+
+[project.scripts]
+estudo = "estudo.cli:principal"
+
+[project.entry-points."intelecto.plugins"]
+estudo = "estudo.intelecto_plugin:ferramentas"
+
+[tool.setuptools.packages.find]
+include = ["estudo*"]
+
+[tool.setuptools.package-data]
+estudo = ["exemplo/*.json", "exemplo/fontes/*.txt", "prompts/*/*.md"]

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+.pytest_cache/
+# dados de aluno nunca entram no repositório
+estudo-dados/
+materia.local.json
+resultados.json
+respostas.json
+*.local.*

@@ -1,0 +1,245 @@
+{
+  "nome": "Biologia — exemplo inventado",
+  "exemplo": true,
+  "professor": {
+    "como_avalia": "A matéria é dividida em objetivos de aprendizagem. Se o aluno erra uma questão do objetivo, perde o objetivo inteiro. Na prova seguinte ele pode refazer os objetivos perdidos.",
+    "regra_objetivo_inteiro": true,
+    "estilo_aula": "Slides com muito texto, quase sem imagem e pouco tempo para praticar."
+  },
+  "aluno": {
+    "nome": "Clara",
+    "jeito": [
+      "visual",
+      "vida-real",
+      "falado"
+    ],
+    "observacoes": "Desenha bem e lembra do que vê. Precisa de exemplo concreto e de poder perguntar."
+  },
+  "objetivos": [
+    {
+      "id": "fotossintese",
+      "titulo": "Fotossíntese: etapas e onde acontecem",
+      "topicos": [
+        "Etapa fotoquímica",
+        "Ciclo de Calvin",
+        "De onde vem o oxigênio"
+      ],
+      "fontes": [
+        "fotossintese.txt"
+      ],
+      "leitura": "A fotossíntese acontece no cloroplasto e tem duas etapas. Na etapa fotoquímica, nos tilacoides, a luz quebra a água (fotólise), libera oxigênio e gera ATP e NADPH. No ciclo de Calvin, no estroma, esse ATP e esse NADPH são usados para fixar o gás carbônico e fazer glicose.",
+      "etapas": [
+        {
+          "nome": "Etapa fotoquímica",
+          "onde": "tilacoides",
+          "entra": "luz + água",
+          "sai": "oxigênio, ATP, NADPH"
+        },
+        {
+          "nome": "Ciclo de Calvin",
+          "onde": "estroma",
+          "entra": "gás carbônico + ATP + NADPH",
+          "sai": "glicose"
+        }
+      ],
+      "vida_real": "Pense numa padaria com dois turnos. O primeiro turno (fotoquímica) só funciona com a luz acesa e enche as baterias (ATP e NADPH). O segundo turno (Calvin) usa essas baterias para montar o pão (glicose) com a farinha que vem do ar (gás carbônico).",
+      "pegadinhas": [
+        "O oxigênio que sai vem da água, não do gás carbônico.",
+        "O ciclo de Calvin não usa luz diretamente, mas para sem a etapa fotoquímica."
+      ],
+      "questoes": [
+        {
+          "id": "f1",
+          "pergunta": "Em que parte do cloroplasto ocorre a etapa fotoquímica?",
+          "opcoes": [
+            "Estroma",
+            "Tilacoides",
+            "Citoplasma",
+            "Núcleo"
+          ],
+          "resposta": "Tilacoides",
+          "explicacao": "A etapa que depende da luz fica nas membranas dos tilacoides; o estroma é do ciclo de Calvin.",
+          "fonte": "fotossintese.txt",
+          "trecho": "ocorre nas membranas dos tilacoides"
+        },
+        {
+          "id": "f2",
+          "pergunta": "De onde vem o oxigênio liberado na fotossíntese?",
+          "opcoes": [
+            "Do gás carbônico",
+            "Da glicose",
+            "Da água",
+            "Do ATP"
+          ],
+          "resposta": "Da água",
+          "explicacao": "A fotólise quebra a água e solta o oxigênio.",
+          "fonte": "fotossintese.txt",
+          "trecho": "O oxigênio liberado na fotossíntese vem da água, e não do gás carbônico"
+        },
+        {
+          "id": "f3",
+          "pergunta": "O que o ciclo de Calvin usa para fixar o gás carbônico?",
+          "resposta": "O ATP e o NADPH da etapa fotoquímica",
+          "explicacao": "As 'baterias' da primeira etapa movem a segunda.",
+          "fonte": "fotossintese.txt",
+          "trecho": "Usa o ATP e o NADPH da etapa fotoquímica para fixar o gás carbônico"
+        }
+      ]
+    },
+    {
+      "id": "respiracao",
+      "titulo": "Respiração celular: as três etapas",
+      "topicos": [
+        "Glicólise",
+        "Ciclo de Krebs",
+        "Cadeia transportadora"
+      ],
+      "fontes": [
+        "respiracao.txt"
+      ],
+      "leitura": "A respiração aeróbica quebra a glicose para fazer ATP. A glicólise, no citoplasma, transforma uma glicose em dois piruvatos e não precisa de oxigênio. O ciclo de Krebs, na matriz da mitocôndria, solta gás carbônico. A cadeia transportadora, na membrana interna da mitocôndria, usa o oxigênio como aceptor final, forma água e produz a maior parte do ATP.",
+      "etapas": [
+        {
+          "nome": "Glicólise",
+          "onde": "citoplasma",
+          "entra": "glicose",
+          "sai": "2 piruvatos + 2 ATP (saldo)"
+        },
+        {
+          "nome": "Ciclo de Krebs",
+          "onde": "matriz da mitocôndria",
+          "entra": "piruvato",
+          "sai": "gás carbônico"
+        },
+        {
+          "nome": "Cadeia transportadora",
+          "onde": "membrana interna da mitocôndria",
+          "entra": "elétrons + oxigênio",
+          "sai": "água + maior parte do ATP"
+        }
+      ],
+      "vida_real": "É como um carro: a glicólise é dar a partida (gasta pouco, rende pouco), o ciclo de Krebs é o motor soltando gás pelo escapamento (gás carbônico) e a cadeia transportadora é a estrada aberta, onde o carro rende de verdade, mas só com oxigênio.",
+      "pegadinhas": [
+        "A glicólise não precisa de oxigênio.",
+        "Planta também respira, de dia e de noite."
+      ],
+      "questoes": [
+        {
+          "id": "r1",
+          "pergunta": "Onde ocorre a glicólise?",
+          "opcoes": [
+            "Matriz da mitocôndria",
+            "Citoplasma",
+            "Membrana interna da mitocôndria",
+            "Cloroplasto"
+          ],
+          "resposta": "Citoplasma",
+          "explicacao": "É a única etapa fora da mitocôndria.",
+          "fonte": "respiracao.txt",
+          "trecho": "Glicólise: ocorre no citoplasma"
+        },
+        {
+          "id": "r2",
+          "pergunta": "Qual é o aceptor final de elétrons da cadeia transportadora?",
+          "opcoes": [
+            "Gás carbônico",
+            "Glicose",
+            "Oxigênio",
+            "Água"
+          ],
+          "resposta": "Oxigênio",
+          "explicacao": "O oxigênio recebe os elétrons no fim da cadeia e forma água.",
+          "fonte": "respiracao.txt",
+          "trecho": "O oxigênio é o aceptor final de elétrons e forma água"
+        },
+        {
+          "id": "r3",
+          "pergunta": "Verdadeiro ou falso: as plantas só respiram à noite.",
+          "opcoes": [
+            "Verdadeiro",
+            "Falso"
+          ],
+          "resposta": "Falso",
+          "explicacao": "Respiram de dia e de noite; de dia a fotossíntese só esconde isso.",
+          "fonte": "respiracao.txt",
+          "trecho": "as plantas também fazem respiração celular, de dia e de noite"
+        }
+      ]
+    },
+    {
+      "id": "genetica",
+      "titulo": "Genética: primeira lei de Mendel",
+      "topicos": [
+        "Alelos",
+        "Homozigoto e heterozigoto",
+        "Cruzamento Aa x Aa"
+      ],
+      "fontes": [
+        "genetica.txt"
+      ],
+      "leitura": "Alelos são versões de um mesmo gene. Homozigoto tem dois alelos iguais (AA ou aa); heterozigoto tem dois diferentes (Aa). O dominante aparece com uma dose só; o recessivo só aparece em dose dupla. No cruzamento Aa x Aa, a proporção esperada é 1 AA : 2 Aa : 1 aa, ou seja, 3 com a característica dominante para 1 com a recessiva.",
+      "etapas": [
+        {
+          "nome": "Pais",
+          "onde": "Aa x Aa",
+          "entra": "cada um passa A ou a",
+          "sai": "4 combinações possíveis"
+        },
+        {
+          "nome": "Genótipos",
+          "onde": "quadro de cruzamento",
+          "entra": "AA, Aa, aA, aa",
+          "sai": "1 AA : 2 Aa : 1 aa"
+        },
+        {
+          "nome": "Fenótipos",
+          "onde": "o que aparece",
+          "entra": "dominante ganha com uma dose",
+          "sai": "3 dominantes : 1 recessivo"
+        }
+      ],
+      "vida_real": "Cada pai tem duas cartas, uma A e uma a, e entrega uma ao acaso. Em quatro rodadas, o esperado é sair uma vez AA, duas vezes Aa e uma vez aa. Mas, como em qualquer sorteio, com poucas rodadas pode dar diferente.",
+      "pegadinhas": [
+        "3 para 1 é o esperado, não garantia com poucos filhotes.",
+        "Aa mostra a característica dominante, mesmo carregando o recessivo."
+      ],
+      "questoes": [
+        {
+          "id": "g1",
+          "pergunta": "Um indivíduo Aa é:",
+          "opcoes": [
+            "Homozigoto dominante",
+            "Heterozigoto",
+            "Homozigoto recessivo"
+          ],
+          "resposta": "Heterozigoto",
+          "explicacao": "Dois alelos diferentes = heterozigoto.",
+          "fonte": "genetica.txt",
+          "trecho": "Heterozigoto tem dois alelos diferentes (Aa)"
+        },
+        {
+          "id": "g2",
+          "pergunta": "No cruzamento Aa x Aa, qual a proporção esperada de fenótipos?",
+          "opcoes": [
+            "1 dominante para 1 recessivo",
+            "3 dominantes para 1 recessivo",
+            "1 dominante para 3 recessivos",
+            "Todos dominantes, nenhum recessivo"
+          ],
+          "resposta": "3 dominantes para 1 recessivo",
+          "explicacao": "1 : 2 : 1 é a dos genótipos; a dos fenótipos é 3 : 1.",
+          "fonte": "genetica.txt",
+          "trecho": "a proporção de fenótipos é 3 dominantes para 1 recessivo"
+        },
+        {
+          "id": "g3",
+          "pergunta": "Quando o alelo recessivo se manifesta?",
+          "resposta": "Só em dose dupla (aa)",
+          "explicacao": "Com um A presente, o dominante aparece.",
+          "fonte": "genetica.txt",
+          "trecho": "O alelo recessivo só se manifesta em dose dupla (aa)"
+        }
+      ]
+    }
+  ]
+}

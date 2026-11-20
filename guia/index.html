@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ensine o seu filho do jeito que ele aprende, mesmo sem dominar a matéria — Estudo do seu jeito</title>
+<meta name="description" content="Kit grátis com a fórmula de 8 passos: a IA ensina você primeiro, monta o guia de estudo no jeito do aluno só com o material da aula e mostra às claras qual método funciona.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/estudo-do-seu-jeito/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/estudo-do-seu-jeito/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/estudo-do-seu-jeito/guia/es/">
+<meta property="og:title" content="Estudo do seu jeito — ensine do jeito dele, mesmo sem dominar a matéria">
+<meta property="og:description" content="Kit grátis com a fórmula de 8 passos: a IA ensina você primeiro, monta o guia de estudo no jeito do aluno só com o material da aula e mostra às claras qual método funciona.">
+<meta property="og:image" content="https://inematds.github.io/estudo-do-seu-jeito/guia/assets/banner.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#FACC15; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    --fill:#FACC15; --tint:rgba(250,204,21,.12); --ok:#7CE0C6; --bad:#F0918A;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#a16207; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    --fill:#FACC15; --tint:#FEF9C3; --ok:#0E6B55; --bad:#A83426;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  body.light pre .k{color:#f0c070}
+  body.light nav{background:rgba(246,247,249,.85)}
+  body.light .amb{color:var(--txt);background:linear-gradient(transparent 55%,#FACC15 55%)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  body.light main a:not(.btn),body.light footer a{color:#854d0e;text-decoration:underline;text-decoration-color:#FACC15;text-decoration-thickness:3px}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  p code,li code,td code{font-size:.9em;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:.05em .35em}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb);white-space:nowrap}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:var(--tint)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--fill);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  nav .links a.sec{white-space:nowrap}
+  @media(max-width:1360px){nav .links a.opt{display:none}}
+  @media(max-width:860px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(250,204,21,.18),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.15rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:44ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:66ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.95rem;margin:0}
+  .card p+p{margin-top:.6em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0;margin:.4em 0 0}
+  pre .c{color:#7d7d8a} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:28px}
+  .step>div{min-width:0}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--fill);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .5em}
+  .quem{display:inline-block;font-family:Sora;font-size:.75rem;letter-spacing:.06em;color:var(--txt);background:var(--tint);border:1px solid var(--line);border-radius:999px;padding:.1em .7em;margin-left:.5em;vertical-align:middle;font-weight:600}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:4px}
+  /* números */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  @media(max-width:720px){.stats{grid-template-columns:1fr}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .stat b{display:block;font:800 clamp(1.9rem,4vw,2.6rem)/1.05 Sora,sans-serif;letter-spacing:-.02em;color:var(--amb)}
+  body.light .stat b{color:var(--txt)}
+  .stat span{display:block;color:var(--mut);font-size:.93rem;margin-top:.5em}
+  .fonte{font-size:.86rem;color:var(--mut);margin-top:14px;max-width:80ch}
+  /* trocas */
+  .troca{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;padding:26px 0;border-top:1px solid var(--line)}
+  .troca:first-of-type{border-top:none}
+  .troca .n{width:64px;height:64px;border-radius:14px;border:1px solid var(--line);background:var(--card);display:flex;align-items:center;justify-content:center;font:800 1.6rem Sora,sans-serif;color:var(--amb)}
+  body.light .troca .n{color:var(--txt);background:var(--fill);border-color:var(--fill)}
+  .troca h3{font-size:1.3rem;margin-bottom:.35em}
+  .troca p{margin:.35em 0;max-width:72ch}
+  .troca .ex{margin-top:.8em;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--fill);border-radius:10px;padding:12px 16px;font-size:.95rem;color:var(--mut);max-width:76ch}
+  .troca .ex b{color:var(--txt)}
+  @media(max-width:540px){.troca{grid-template-columns:1fr}}
+  /* três finais */
+  .vs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;max-width:900px}
+  @media(max-width:720px){.vs{grid-template-columns:1fr}}
+  .vs div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.93rem}
+  .vs strong{display:block;font-family:Sora;margin-bottom:.25em}
+  .vs .r{display:block;margin-top:.5em;font-weight:600}
+  .vs .r.bad{color:var(--bad)} .vs .r.ok{color:var(--ok)}
+  .card ul{margin:8px 0 0;padding-left:20px}.card li{margin:5px 0}
+  /* prova */
+  .prova{background:var(--card);border:1px solid var(--amb);border-radius:16px;padding:26px 26px 22px;margin-top:6px}
+  body.light .prova{border-color:#EAB308}
+  .tl{list-style:none;margin:0;padding:0;counter-reset:t}
+  .tl li{position:relative;padding:0 0 18px 48px;counter-increment:t}
+  .tl li::before{content:counter(t);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:10px;background:var(--fill);color:#1a1206;font:800 .95rem/32px Sora,sans-serif;text-align:center}
+  .tl li::after{content:"";position:absolute;left:15px;top:36px;bottom:4px;width:2px;background:var(--line)}
+  .tl li:last-child::after{display:none}
+  .tl b{font-family:Sora}
+  blockquote{margin:6px 0 0;padding:14px 18px;border-left:3px solid var(--fill);background:var(--bg2);border-radius:0 10px 10px 0;font-size:1.02rem}
+  .prova .rod{font-size:.86rem;color:var(--mut);margin-top:14px}
+  /* parte técnica */
+  .techhead{background:var(--bg2);border-top:3px solid var(--fill);padding:58px 0 8px}
+  .techhead h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:.3em 0 0}
+  .techhead .sub{color:var(--mut);margin:.6em 0 1.2em;max-width:66ch}
+  .techzone{background:var(--bg2)}
+  .techzone .card{background:var(--card)}
+  .tbl{width:100%;border-collapse:collapse;font-size:.93rem}
+  .tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{font-family:Sora;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+  @media(max-width:600px){.tbl thead{display:none} .tbl tr{display:block;border-bottom:1px solid var(--line);padding:6px 0} .tbl tr:last-child{border-bottom:none} .tbl td{display:block;border:none;padding:4px 14px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">📚</span> Estudo do seu jeito</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#explicado">O ganho</a>
+    <a class="sec opt" href="#historia">A história</a>
+    <a class="sec" href="#formula">A fórmula</a>
+    <a class="sec opt" href="#app">O app</a>
+    <a class="sec" href="#comecar">Como começar</a>
+    <a class="sec opt" href="#pedidos">Pedidos</a>
+    <a class="sec opt" href="#prova">A prova</a>
+    <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/estudo-do-seu-jeito" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Estudo do seu jeito · kit grátis para quem ensina</span>
+      <h1>Ensine o seu filho <span class="amb">do jeito que ele aprende</span>, mesmo sem dominar a matéria</h1>
+      <p class="lead">Ele sempre foi bem e agora está indo mal numa matéria. Você quer ajudar, mas não lembra mais nada daquilo. Com a fórmula <strong>Estudo do seu jeito</strong>, a IA ensina você primeiro e monta com você um guia no jeito dele. O kit mostra às claras qual método de estudo está funcionando.</p>
+      <div class="cta">
+        <a class="btn" href="#explicado">O que você ganha</a>
+        <a class="btn ghost" href="#comecar">Como começar</a>
+      </div>
+    </div>
+    <figure><img src="assets/banner.jpg" alt="Estudo do seu jeito: ensine do jeito dele, mesmo sem dominar a matéria"></figure>
+  </div>
+</header>
+
+<main>
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">Em uma frase</span>
+  <p>Quando o filho (ou o aluno) começa a ir mal, quem quer ajudar costuma não saber a matéria nem o jeito certo de explicar. <strong>Estudo do seu jeito</strong> é um kit grátis com uma fórmula de 8 passos. A IA ensina você primeiro e depois monta um guia de estudo no jeito do aluno, com esquemas, exemplos da vida real e questões tiradas só do material da aula. Também ajuda a testar, sem esconder nada, qual jeito de estudar funciona para ele. Para usar, basta um chat de IA. Para ir além, use o Claude Code ou o Codex.</p>
+  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Estudo do seu jeito: aprenda primeiro, como o professor avalia, como ele aprende, guia só com a fonte, teste dos métodos, ele segue sozinho" loading="lazy" style="width:100%;display:block"></figure>
+</div></section>
+
+<section id="explicado"><div class="wrap">
+  <span class="chip">O ganho</span>
+  <h2>Antes e depois da <span class="amb">fórmula</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>😟 Sem a fórmula</h3><p>Ele estuda do jeito de sempre: relê a apostila e grifa. A aula é um slide cheio de texto e ele aprende vendo. Você quer ajudar, mas não lembra a matéria e tem medo de ensinar errado.</p><p>Quando a IA faz um resumo, você não sabe se aquilo está certo ou se ela inventou.</p></div>
+    <div class="card"><h3>😊 Com a fórmula</h3><p>Primeiro você aprende o ponto em que ele errou. Depois ele estuda num guia feito para ele, com esquema para redesenhar, exemplo da vida real e questões.</p><p>Toda questão traz a frase do caderno ou do livro que prova a resposta. O que não está no material não entra.</p></div>
+  </div>
+  <div class="grid g3" style="margin-top:16px">
+    <div class="card"><h3>🎯 Ajuda no ponto certo</h3><p>O guia começa pelo que ele errou na prova e segue a regra do professor. Se perder uma questão faz perder o objetivo inteiro (objetivo = cada assunto que o professor cobra na prova), o guia mostra isso.</p></div>
+    <div class="card"><h3>🔍 Nada inventado</h3><p>A IA pode errar com confiança. Aqui cada questão é conferida no material, e resposta errada que ele anotou no caderno é apontada antes de virar estudo.</p></div>
+    <div class="card"><h3>📊 O método que funciona, à vista</h3><p>Redesenhar, explicar em voz alta, exemplo da vida real, fazer questões sem consultar: o kit testa um por vez e mostra o placar, sem chutar o vencedor cedo demais.</p></div>
+  </div>
+  <div class="grid g3" style="margin-top:16px">
+    <div class="card"><h3>👤 Para quem</h3><p>Mãe, pai, avó, tutor, professor particular. Qualquer pessoa que ajuda alguém a estudar, do ensino médio à faculdade.</p></div>
+    <div class="card"><h3>⏱️ Um dia para o primeiro guia</h3><p>Na história que deu origem à fórmula, a primeira versão do guia ficou pronta num dia, a partir de um pedido de quatro frases no chat.</p></div>
+    <div class="card"><h3>🎁 Grátis</h3><p>O kit, os pedidos prontos para o chat (nesta página) e este guia em português, inglês e espanhol.</p></div>
+  </div>
+</div></section>
+
+<!-- VIDEO: entra o explicavideo do projeto quando publicado -->
+
+<section id="historia"><div class="wrap">
+  <span class="chip">A história</span>
+  <h2>Uma mãe que não é programadora, <span class="amb">a cinco horas da filha</span></h2>
+  <p class="sub">A fórmula saiu de uma história real. Trocamos os nomes.</p>
+  <div class="prova">
+    <ol class="tl">
+      <li><b>A filha que só tirava A começa a ir mal</b><br><span class="mut">Clara foi estudar biologia marinha numa faculdade a cinco horas de casa. Era muita matéria em pouco tempo, as aulas eram slides cheios de texto, e na matéria dela errar uma questão de um objetivo fazia perder o objetivo inteiro. Ela, que aprende vendo e perguntando, foi parar no D.</span></li>
+      <li><b>A mãe estuda primeiro</b><br><span class="mut">Lúcia tem quatro filhos e há 21 anos tem uma agência de marketing com o marido, dentro de casa. Pegou o que Clara tinha errado na prova e estudou com o Claude, duas a três horas por dia, para conseguir explicar. Clara achou que a mãe "sabia biologia".</span></li>
+      <li><b>Um guia no jeito da filha, em um dia</b><br><span class="mut">Lúcia é designer e sabia que Clara aprende vendo. Pediu ao Claude, em quatro frases, um guia de estudo organizado do jeito que a professora avalia, com o material das aulas. Depois pediu para virar página. No mesmo dia tinha algo para mostrar.</span></li>
+      <li><b>Toda semana, material novo e conferido</b><br><span class="mut">Clara fotografava o caderno depois de cada aula. O guia era refeito e conferido no livro. A IA chegou a avisar que um guia preenchido por Clara tinha respostas erradas.</span></li>
+      <li><b>O resultado</b><br><span class="mut">A nota subiu mais de 10 pontos: de um D (nota baixa, na escala de letras) para perto de 80 de 100. Os objetivos que Clara tinha perdido voltaram todos certos na prova seguinte. E Clara, que era contra IA, passou a vê-la como um jeito de aprender, não de cortar caminho.</span></li>
+    </ol>
+    <p class="rod">Os números são da história, não foram medidos por este kit. O exemplo que vem no kit usa dados inventados e avisa isso na tela.</p>
+  </div>
+</div></section>
+
+<section id="formula"><div class="wrap">
+  <span class="chip">A fórmula</span>
+  <h2>Os 8 passos do <span class="amb">Estudo do seu jeito</span></h2>
+  <p class="sub">É o que Lúcia fez, posto em ordem. O kit marca cada passo como feito ou não, a partir do que você registrou.</p>
+  <div class="grid g4">
+    <div class="card"><h3>1. Você aprende primeiro</h3><p>A IA explica o ponto em que ele errou, com exemplo e pegadinhas, e confere se você entendeu.</p></div>
+    <div class="card"><h3>2. Como o professor avalia</h3><p>Como a matéria é dividida e o que faz perder ponto.</p></div>
+    <div class="card"><h3>3. Como ele aprende</h3><p>Vendo, ouvindo e falando, com exemplo concreto ou escrevendo. Pode ser mais de um jeito.</p></div>
+    <div class="card"><h3>4. O que ele já errou</h3><p>A última prova diz por onde começar.</p></div>
+    <div class="card"><h3>5. Planejar antes de fazer</h3><p>Você conta tudo à IA, ela pergunta o que não sabe e dá opções. No fim, um resumo do plano.</p></div>
+    <div class="card"><h3>6. Guia só com o material</h3><p>Cada objetivo tem leitura, esquema, exemplo da vida real, pegadinhas e questões que citam a frase do material.</p></div>
+    <div class="card"><h3>7. Toda semana, de novo</h3><p>Fotos do caderno entram, o guia é refeito, e o que ele anotou errado é apontado.</p></div>
+    <div class="card"><h3>8. Ele segue sozinho</h3><p>O objetivo final é você sair do meio: ele estuda, registra e cuida do próprio guia.</p></div>
+  </div>
+</div></section>
+
+<section id="dia"><div class="wrap">
+  <span class="chip">No seu dia a dia</span>
+  <h2>Como isso muda a <span class="amb">sua semana</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>📸 Depois da aula</h3><p><strong>Hoje:</strong> ele chega cansado e o caderno fica fechado até a véspera da prova.</p><p><strong>Com a fórmula:</strong> ele manda a foto do caderno, a IA passa para texto do jeito que está escrito e o guia ganha os objetivos da semana.</p></div>
+    <div class="card"><h3>🧠 Antes de explicar</h3><p><strong>Hoje:</strong> você abre o livro e não entende nada, ou pede à IA e não sabe se ela inventou.</p><p><strong>Com a fórmula:</strong> a IA explica a partir do material dele, com exemplo do dia a dia, e diz "o material não fala disso" quando é o caso.</p></div>
+    <div class="card"><h3>✏️ Na hora de estudar</h3><p><strong>Hoje:</strong> reler a apostila de novo.</p><p><strong>Com a fórmula:</strong> ele marca só o que precisa hoje, olha o esquema, esconde e redesenha de memória, depois faz as questões sem consultar.</p></div>
+    <div class="card"><h3>📅 Uma semana antes da prova</h3><p><strong>Hoje:</strong> tudo na última noite.</p><p><strong>Com a fórmula:</strong> um plano dia a dia, primeiro o que ele errou, e no último dia só questões. A folha de resumo vai impressa no bolso.</p></div>
+  </div>
+</div></section>
+
+<section id="app"><div class="wrap">
+  <span class="chip">O guia do aluno</span>
+  <h2>Uma página que ele abre <span class="amb">no celular</span></h2>
+  <p class="sub">O kit gera o guia como uma página só, que funciona sem internet. Abaixo, o exemplo com dados inventados (a página do exemplo está em português).</p>
+  <div class="grid g3">
+    <div class="card"><img src="assets/app-1.jpg" alt="Aba Estudar, modo Ver: esquema das etapas da fotossíntese com o botão Esconder e redesenhar de memória" loading="lazy" style="width:100%;border-radius:10px;display:block"><p style="margin-top:10px"><strong>Ver e redesenhar.</strong> O esquema some e ele desenha de memória.</p></div>
+    <div class="card"><img src="assets/app-2.jpg" alt="Aba Questões: perguntas de múltipla escolha e uma aberta, com a frase do material aparecendo depois da resposta" loading="lazy" style="width:100%;border-radius:10px;display:block"><p style="margin-top:10px"><strong>Questões sem consultar.</strong> Depois de responder, aparece a frase do material que prova a certa.</p></div>
+    <div class="card"><img src="assets/app-3.jpg" alt="Placar dos métodos: quantos objetivos cada método levou a dominar, com o aviso pouco dado" loading="lazy" style="width:100%;border-radius:10px;display:block"><p style="margin-top:10px"><strong>Placar dos métodos.</strong> Com menos de 3 objetivos testados, aparece "pouco dado".</p></div>
+  </div>
+  <p style="margin-top:18px"><a class="btn" href="demo/" target="_blank" rel="noopener">Abrir o exemplo e testar</a></p>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h3>🗂️ Ele escolhe o que estudar hoje</h3><p>Marca os objetivos e alterna entre ler, ver, vida real, pegadinhas e questões.</p></div>
+    <div class="card"><h3>🖨️ Folha de resumo</h3><p>Em preto e branco, só com o que ele marcou: tudo, só esquemas ou só questões.</p></div>
+  </div>
+</div></section>
+
+<section id="como"><div class="wrap">
+  <span class="chip">Como funciona</span>
+  <h2>Quem escreve, quem confere, <span class="amb">sem jargão</span></h2>
+  <div class="grid g3">
+    <div class="card"><h3>✍️ A IA escreve</h3><p>A IA do chat, o Claude Code ou o Codex lê as fotos e escreve as explicações e as questões. É a parte em que a IA é boa.</p></div>
+    <div class="card"><h3>🔎 O kit confere</h3><p>Como o professor que pede "mostre onde está no livro": cada questão tem de trazer a frase do material. O kit procura a frase e, se ela não existe, a questão não entra.</p></div>
+    <div class="card"><h3>📒 O caderno de bordo</h3><p>Antes de estudar, fica anotado qual método ele vai usar e por quê. Depois, o resultado. Nada é apagado, então dá para ver o caminho todo.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>🧪 O teste dos métodos, às claras</h3><p>Ninguém sabe de antemão qual jeito de estudar funciona para ele. O kit alterna os métodos que combinam com o jeito dele e também usa o "reler e grifar" de sempre, para comparar. Só chama um método de "na frente" quando há pelo menos 3 objetivos testados em cada um e uma diferença clara. Antes disso, diz "pouco dado".</p></div>
+  <div class="card" style="margin-top:16px"><h3>⚠️ O que o kit não promete</h3><ul>
+    <li>Não promete nota: é uma ajuda para estudar melhor.</li>
+    <li>Confere se a frase está no material, mas não se o material está certo. Por isso o livro entra como fonte.</li>
+    <li>O placar é uma pista honesta, não um experimento científico: objetivos diferentes têm dificuldades diferentes.</li>
+  </ul></div>
+</div></section>
+
+<section id="jeitos"><div class="wrap">
+  <span class="chip">Quatro jeitos de usar</span>
+  <h2>Do <span class="amb">chat</span> ao seu Jarvis</h2>
+  <div class="grid g4">
+    <div class="card"><h3>💬 Só o chat</h3><p>Pedidos prontos para colar em qualquer IA: planejar, você aprender primeiro, passar o caderno para texto, conferir o que ele preencheu (<a href="#pedidos">estão logo abaixo</a>).</p></div>
+    <div class="card"><h3>📱 O app do aluno</h3><p>A página do guia, no celular ou no computador, sem internet. Quem gera a página é o Claude Code ou o Codex, com o kit.</p></div>
+    <div class="card"><h3>🤖 Claude Code ou Codex</h3><p>O agente faz o trabalho da semana seguindo a fórmula, e o kit confere tudo.</p></div>
+    <div class="card"><h3>🧠 No seu Jarvis</h3><p>Quem já usa o assistente INEMA (INTELECTO) liga o kit, e o aluno pergunta pelo Telegram: "qual método está funcionando?"</p></div>
+  </div>
+</div></section>
+
+<section id="comecar"><div class="wrap">
+  <span class="chip">Como começar</span>
+  <h2>Comece pelo <span class="amb">plano</span>, não pelo guia</h2>
+  <p class="sub">É onde as coisas costumam dar errado: quem pula o plano refaz tudo depois.</p>
+  <div class="grid g3">
+    <div class="card"><h3>1. Abra a sua IA</h3><p>O chat do Claude (ou de outra IA) já serve. Se usa o Claude Code ou o Codex, abra numa pasta qualquer.</p></div>
+    <div class="card"><h3>2. Cole o pedido e anexe o material</h3><p>Fotos do caderno, o guia do professor, a prova corrigida.</p></div>
+    <div class="card"><h3>3. Responda as perguntas dela</h3><p>Ela pergunta o que não sabe e dá opções. Você escolhe, e só então ela monta.</p></div>
+  </div>
+  <div class="pedido" style="margin-top:20px;position:relative">
+<pre id="pedidoTxt" style="white-space:pre-wrap">Quero montar um guia de estudo para [quem], que está em [matéria e nível]. Vou anexar o material: anotações, guia do professor, a última prova.
+1. Ainda não construa nada. Primeiro me pergunte o que você precisa saber: como o professor avalia, como [quem] aprende, o que errou.
+2. Me dê 2 ou 3 opções de como organizar o guia, com o lado bom e o ruim de cada uma.
+3. Regra fixa: todo conteúdo e toda questão saem só do material que eu mandar, com a frase que prova a resposta. Se faltar, me pergunte.
+4. Quando eu escolher, me mostre um resumo do plano e espere o meu sim.</pre>
+    <button class="btn copiar" data-alvo="pedidoTxt" id="copiarPedido" style="margin-top:10px">Copiar o pedido</button>
+  </div>
+  <p class="mut" style="margin-top:16px">Funciona em qualquer chat de IA. Se você usa o Claude Code ou o Codex (versões que trabalham com arquivos no seu computador), acrescente no começo: "Leia o kit em https://github.com/inematds/estudo-do-seu-jeito e siga a fórmula". Assim ela usa a conferência automática do kit.</p>
+  <div class="card" style="margin-top:16px"><h3>🛠️ É técnico e quer instalar à mão?</h3><p>Os comandos, o formato dos arquivos, a skill do Claude Code, o plugin do Jarvis e os testes estão no README do GitHub.</p><p><a class="btn ghost" href="https://github.com/inematds/estudo-do-seu-jeito#instalação-técnica" target="_blank" rel="noopener">Ver a instalação técnica</a></p></div>
+</div></section>
+
+<section id="pedidos"><div class="wrap">
+  <span class="chip">Pedidos prontos</span>
+  <h2>Os pedidos para cada passo, <span class="amb">prontos para colar</span></h2>
+  <p class="sub">Troque o que está entre [colchetes] e anexe o material no chat. Todos mandam a IA usar só o que você mandar.</p>
+  <div class="grid g2">
+    <div class="card"><h3>🧠 Você aprende primeiro (passo 1)</h3><p>Antes de explicar um assunto que você não domina. Anexe o material daquele assunto.</p>
+<pre id="p-aprende" style="white-space:pre-wrap">Vou ensinar [assunto, ex.: respiração celular] para [nome], que aprende [jeito, ex.: vendo e com exemplo da vida real]. Use só o material anexado.
+1. Me explique como se eu fosse leigo, em passos curtos, na ordem em que as coisas acontecem.
+2. Me dê um exemplo da vida real para cada passo.
+3. Me diga as 3 pegadinhas mais prováveis na prova, cada uma com a frase do material que mostra a certa.
+4. Me faça 3 perguntas para ver se eu entendi, uma de cada vez, e corrija com a frase do material.
+5. Se o material não disser alguma coisa, fale "o material não diz" em vez de completar.</pre>
+      <button class="btn copiar" data-alvo="p-aprende" style="margin-top:10px">Copiar o pedido</button></div>
+    <div class="card"><h3>📸 Passar o caderno para texto (passo 7)</h3><p>Para cada foto das anotações. O texto que sai vira o material da semana.</p>
+<pre id="p-foto" style="white-space:pre-wrap">Transcreva o texto desta foto exatamente como está, em texto simples. Não corrija o conteúdo, não complete frases e não acrescente nada. Onde não der para ler, escreva [ilegível]. Desenho ou esquema: descreva em uma linha entre colchetes, ex.: [esquema: glicose → piruvato, com seta].</pre>
+      <button class="btn copiar" data-alvo="p-foto" style="margin-top:10px">Copiar o pedido</button></div>
+    <div class="card"><h3>📝 Guia da semana (passo 6)</h3><p>Depois de passar o caderno para texto, no mesmo chat.</p>
+<pre id="p-semana" style="white-space:pre-wrap">Com base só no texto das anotações acima, monte o guia desta semana para [nome], que aprende [jeito]. Para cada objetivo da aula: uma explicação curta, as etapas em esquema (nome, onde acontece, o que entra, o que sai), um exemplo da vida real, as pegadinhas e 3 questões de múltipla escolha. Em cada questão, copie a frase do material que prova a resposta. Deixe as opções com tamanho parecido e a certa em posições variadas. Se o material for pouco, faça menos questões; não invente.</pre>
+      <button class="btn copiar" data-alvo="p-semana" style="margin-top:10px">Copiar o pedido</button></div>
+    <div class="card"><h3>🔍 Conferir o que ele preencheu (passo 7)</h3><p>Antes de usar como estudo um guia ou lista que ele respondeu à mão.</p>
+<pre id="p-confere" style="white-space:pre-wrap">Este é um guia de estudo que [nome] preencheu (foto anexa) e este é o material da aula (anexo). Antes de usarmos isso para estudar, compare cada resposta com o material. Para cada uma que não bater, mostre: a pergunta, a resposta dada, o que o material diz (com a frase) e me pergunte o que fazer. Não corrija sozinho e não use nada fora do material.</pre>
+      <button class="btn copiar" data-alvo="p-confere" style="margin-top:10px">Copiar o pedido</button></div>
+  </div>
+  <p class="mut" style="margin-top:16px">Para o resumo do plano, o placar dos métodos e o app do aluno, use o Claude Code ou o Codex com o kit (veja o README no GitHub).</p>
+</div></section>
+
+<section id="prova"><div class="wrap">
+  <span class="chip">A prova</span>
+  <h2>Testamos: a questão inventada <span class="amb">não entrou</span></h2>
+  <p class="sub">No exemplo de biologia, mandamos duas questões novas sobre respiração celular. Uma estava certa. A outra dizia que a glicólise produz 38 moléculas de ATP, e o material não diz isso.</p>
+  <div class="prova">
+    <ol class="tl">
+      <li><b>A questão certa trazia a frase do caderno:</b><br><span class="mut">"Glicólise: ocorre no citoplasma".</span></li>
+      <li><b>A inventada citava uma frase que não existe no material.</b><br><span class="mut">O kit procurou e não achou.</span></li>
+      <li><b>Nada foi gravado.</b><br><span class="mut">O kit recusou o arquivo inteiro e disse qual questão corrigir.</span></li>
+      <li><b>Depois, um guia preenchido com "estroma" onde o certo era "tilacoides".</b><br><span class="mut">O kit apontou a resposta, mostrou a frase do material e avisou para não usar aquilo como estudo sem corrigir.</span></li>
+    </ol>
+    <blockquote>"ERRO respiracao-2/x2: o trecho não existe em respiracao.txt. Copie o trecho exato da fonte ou tire a questão"<br>"Nada foi gravado: 1 erro(s). Corrija o arquivo e rode de novo."</blockquote>
+    <p class="rod">Saída real do kit em 20/11/2026, no exemplo com dados inventados. O kit tem 42 testes automáticos.</p>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <span class="chip">Perguntas comuns</span>
+  <h2>Antes de você <span class="amb">começar</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>Preciso saber programar?</h3><p>Não. A mãe da história não programa. O chat e os pedidos prontos bastam. O Claude Code entra quando você quer as partes interativas e a conferência automática.</p></div>
+    <div class="card"><h3>Eu não sei a matéria. Dá certo?</h3><p>É para isso que existe o passo 1: a IA ensina você antes, a partir do material dele, e confere se você entendeu.</p></div>
+    <div class="card"><h3>Não é colar?</h3><p>Não. O guia ensina e testa. As questões são para treinar sem consultar, e o objetivo final é ele estudar sozinho.</p></div>
+    <div class="card"><h3>Serve para qualquer matéria?</h3><p>Serve para matéria que tem material escrito: anotações, apostila, livro. O exemplo é biologia, mas a fórmula é a mesma para química, história ou direito.</p></div>
+    <div class="card"><h3>Quanto custa?</h3><p>O kit é grátis. Você precisa de uma IA: o chat gratuito já começa. Na história, a mãe passou depois para o Claude Code, que é pago.</p></div>
+    <div class="card"><h3>Que nomes são esses?</h3><p><strong>Claude Code</strong> e <strong>Codex</strong>: versões do Claude e do ChatGPT que trabalham com arquivos no seu computador. <strong>GitHub</strong>: o site onde o kit fica guardado, de graça. <strong>README</strong>: o manual do kit, nesse site. <strong>INTELECTO</strong> ou <strong>Jarvis</strong>: o assistente pessoal grátis do INEMA. Só com o chat você já usa a fórmula.</p></div>
+    <div class="card"><h3>E os dados dele?</h3><p>Ficam no seu computador, numa pasta só sua. Nada vai para o GitHub.</p></div>
+  </div>
+  <p class="fonte" style="margin-top:22px">E você: em que matéria você gostaria de ajudar alguém, se soubesse por onde começar? Grátis no inema.club, direto na internet.</p>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Python 3</div><div class="pill">Claude Code</div><div class="pill">Codex</div><div class="pill">INTELECTO</div><div class="pill">MIT</div>
+    <p style="margin-top:18px">Estudo do seu jeito · grátis no inema.club, direto na internet ·
+      <a href="https://github.com/inematds/estudo-do-seu-jeito">inematds/estudo-do-seu-jeito</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='estudo-do-seu-jeito-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    try{ if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; } }catch(e){}
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){}
+    });
+  })();
+  (function(){
+    document.querySelectorAll('button.copiar').forEach(function(bt){
+      var orig=bt.textContent, tx=document.getElementById(bt.getAttribute('data-alvo'));
+      bt.addEventListener('click',function(){
+        try{ navigator.clipboard.writeText(tx.textContent).then(function(){ bt.textContent='Copiado ✓'; setTimeout(function(){bt.textContent=orig;},2000); }); }catch(e){}
+      });
+    });
+  })();
+</script>
+</body>
+</html>
