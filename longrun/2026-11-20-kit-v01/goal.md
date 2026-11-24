@@ -14,4 +14,4 @@ sem citar fonte, programa, universidade ou lugar.
 5. Placar: método com n < 3 objetivos nunca aparece como "melhor" (teste de limite).
 6. Plugin: `INTELECTO_PLUGINS=estudo` + provedor mock do intelecto-v2 carrega as ferramentas sem aviso (teste).
 7. Portão sem fonte: `test_repositorio_sem_fonte_de_inspiracao` passa (lista de nomes montada no teste, fora do texto).
-8. Guia PT/EN/ES em `guia/`, revisor independente aprovado (nota ≥ 8), push no inematds/estudo-do-seu-jeito, Pages responde 200.
+8. Guia PT/EN/ES em `guia/`, revisor independente aprovado (nota ≥ 8), push no linnoff88-dev/estudo-do-seu-jeito, Pages responde 200.

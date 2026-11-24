@@ -6,7 +6,7 @@ de cada questão na fonte e teste transparente dos métodos. Superfícies: CLI, 
 
 ## Regras do projeto
 
-- Conta GitHub: `inematds` (autor `inematds <inematds@gmail.com>`).
+- Conta GitHub: `linnoff88-dev` (autor `linnoff88-dev <linnoff88-dev@gmail.com>`).
 - **Sem fonte de inspiração**: não citar programa, pessoas reais, faculdade nem lugar. Personagens: Lúcia (mãe) e Clara
   (filha). O teste `test_repositorio_sem_fonte_de_inspiracao` barra os nomes.
 - Números da história (nota, objetivos refeitos) são da história; nunca apresentar como medição do kit. O exemplo usa

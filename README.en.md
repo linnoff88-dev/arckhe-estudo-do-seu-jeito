@@ -1,6 +1,6 @@
 # estudo-do-seu-jeito
 
-[![Study your way](guia/assets/banner-en.jpg)](https://inematds.github.io/estudo-do-seu-jeito/guia/en/)
+[![Study your way](guia/assets/banner-en.jpg)](https://linnoff88-dev.github.io/
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
@@ -14,13 +14,13 @@ that fits the student’s learning style, with diagrams, real-life examples, and
 test, transparently, which study method works for them. All you need is an AI chat. To do more, use
 Claude Code or Codex.
 
-📖 Guide (landing page + walkthrough): **https://inematds.github.io/estudo-do-seu-jeito/guia/en/** ·
-🧪 Student app demo: **https://inematds.github.io/estudo-do-seu-jeito/guia/demo/** (the example is in Portuguese)
+📖 Guide (landing page + walkthrough): **https://linnoff88-dev.github.io/ ·
+🧪 Student app demo: **https://linnoff88-dev.github.io/ (the example is in Portuguese)
 
 ## How to get started (paste this into your AI)
 
 ```text
-Read the "Study your way" kit at https://github.com/inematds/estudo-do-seu-jeito (the README explains the 8-step formula and includes ready-to-use prompts).
+Read the "Study your way" kit at https://github.com/linnoff88-dev/estudo-do-seu-jeito (the README explains the 8-step formula and includes ready-to-use prompts).
 I want to build a study guide for [who], who is studying [subject and level]. I’ll attach the materials: notes, the teacher’s guide, the latest test.
 1. Don’t build anything yet. First ask me what you need to know: how the teacher grades, how [who] learns, and what they got wrong.
 2. Give me 2 or 3 options for organizing the guide, with the pros and cons of each.
@@ -100,7 +100,7 @@ Methods: look and redraw · explain out loud · real-life example · answer ques
 Requires Python 3.10 or newer. No packages to install.
 
 ```bash
-git clone https://github.com/inematds/estudo-do-seu-jeito && cd estudo-do-seu-jeito
+git clone https://github.com/linnoff88-dev/estudo-do-seu-jeito && cd estudo-do-seu-jeito
 python3 -m estudo demo --pasta ~/estudo-demo     # example with invented data
 # open ~/estudo-demo/guia.html in your browser
 python3 -m estudo placar --pasta ~/estudo-demo
@@ -134,7 +134,7 @@ Without the skill, you can use prompt 3 instead (`python3 -m estudo prompts 3`).
 ### INTELECTO v2 plugin (your Jarvis)
 
 ```bash
-pip install git+https://github.com/inematds/estudo-do-seu-jeito
+pip install git+https://github.com/linnoff88-dev/estudo-do-seu-jeito
 INTELECTO_PLUGINS=estudo ESTUDO_PASTA=~/.estudo-do-seu-jeito python3 -m intelecto
 ```
 

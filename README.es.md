@@ -1,6 +1,6 @@
 # estudo-do-seu-jeito
 
-[![Estudio a tu manera](guia/assets/banner-es.jpg)](https://inematds.github.io/estudo-do-seu-jeito/guia/es/)
+[![Estudio a tu manera](guia/assets/banner-es.jpg)](https://linnoff88-dev.github.io/
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
@@ -10,13 +10,13 @@
 
 Cuando tu hijo (o tu estudiante) empieza a tener dificultades, quienes quieren ayudar suelen no conocer la materia ni la manera correcta de explicarla. **Estudio a tu manera** es un kit gratuito con una fórmula de 8 pasos. La IA primero te enseña a ti y luego prepara una guía de estudio adaptada a la manera de aprender del estudiante, con esquemas, ejemplos de la vida real y preguntas basadas únicamente en el material de clase. También ayuda a probar, sin ocultar nada, qué manera de estudiar funciona para él. Para usarlo, basta con un chat de IA. Para ir más allá, usa Claude Code o Codex.
 
-📖 Guía (página de presentación + paso a paso): **https://inematds.github.io/estudo-do-seu-jeito/guia/es/** ·  
-🧪 Ejemplo de la app del estudiante: **https://inematds.github.io/estudo-do-seu-jeito/guia/demo/** (el ejemplo está en portugués)
+📖 Guía (página de presentación + paso a paso): **https://linnoff88-dev.github.io/ ·  
+🧪 Ejemplo de la app del estudiante: **https://linnoff88-dev.github.io/ (el ejemplo está en portugués)
 
 ## Cómo empezar (copia esto en tu IA)
 
 ```text
-Lee el kit "Estudio a tu manera" en https://github.com/inematds/estudo-do-seu-jeito (el README explica la fórmula de 8 pasos y las instrucciones listas para usar).
+Lee el kit "Estudio a tu manera" en https://github.com/linnoff88-dev/estudo-do-seu-jeito (el README explica la fórmula de 8 pasos y las instrucciones listas para usar).
 Quiero preparar una guía de estudio para [quién], que está en [materia y nivel]. Voy a adjuntar el material: apuntes, guía del profesor, el último examen.
 1. Todavía no construyas nada. Primero pregúntame qué necesitas saber: cómo evalúa el profesor, cómo aprende [quién] y qué errores cometió.
 2. Dame 2 o 3 opciones para organizar la guía, con los pros y los contras de cada una.
@@ -85,7 +85,7 @@ Métodos: observar y volver a dibujar · explicar en voz alta · ejemplo de la v
 Necesitas Python 3.10 o una versión posterior. No hace falta instalar ningún paquete.
 
 ```bash
-git clone https://github.com/inematds/estudo-do-seu-jeito && cd estudo-do-seu-jeito
+git clone https://github.com/linnoff88-dev/estudo-do-seu-jeito && cd estudo-do-seu-jeito
 python3 -m estudo demo --pasta ~/estudo-demo     # ejemplo con datos inventados
 # abre ~/estudo-demo/guia.html en el navegador
 python3 -m estudo placar --pasta ~/estudo-demo
@@ -118,7 +118,7 @@ Sin la skill, funciona pegando la instrucción 3 (`python3 -m estudo prompts 3`)
 ### Plugin de INTELECTO v2 (tu Jarvis)
 
 ```bash
-pip install git+https://github.com/inematds/estudo-do-seu-jeito
+pip install git+https://github.com/linnoff88-dev/estudo-do-seu-jeito
 INTELECTO_PLUGINS=estudo ESTUDO_PASTA=~/.estudo-do-seu-jeito python3 -m intelecto
 ```
 

@@ -1,4 +1,4 @@
-﻿# estudo-do-seu-jeito
+# estudo-do-seu-jeito
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -6,7 +6,7 @@
 </div>
 
 
-[![Estudo do seu jeito](guia/assets/banner.jpg)](https://inematds.github.io/estudo-do-seu-jeito/guia/)
+[![Estudo do seu jeito](guia/assets/banner.jpg)](https://linnoff88-dev.github.io/
 
 **ðŸ‡§ðŸ‡· [PortuguÃªs](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [EspaÃ±ol](README.es.md)**
 
@@ -20,13 +20,13 @@ no jeito do aluno, com esquemas, exemplos da vida real e questÃµes tiradas sÃ
 testar, sem esconder nada, qual jeito de estudar funciona para ele. Para usar, basta um chat de IA. Para ir alÃ©m, use o
 Claude Code ou o Codex.
 
-ðŸ“– Guia (landing + passo a passo): **https://inematds.github.io/estudo-do-seu-jeito/guia/** Â·
-ðŸ§ª Exemplo do app do aluno: **https://inematds.github.io/estudo-do-seu-jeito/guia/demo/**
+ðŸ“– Guia (landing + passo a passo): **https://linnoff88-dev.github.io/ Â·
+ðŸ§ª Exemplo do app do aluno: **https://linnoff88-dev.github.io/
 
 ## Como comeÃ§ar (cole na sua IA)
 
 ```text
-Leia o kit "Estudo do seu jeito" em https://github.com/inematds/estudo-do-seu-jeito (o README explica a fÃ³rmula de 8 passos e os pedidos prontos).
+Leia o kit "Estudo do seu jeito" em https://github.com/linnoff88-dev/estudo-do-seu-jeito (o README explica a fÃ³rmula de 8 passos e os pedidos prontos).
 Quero montar um guia de estudo para [quem], que estÃ¡ em [matÃ©ria e nÃ­vel]. Vou anexar o material: anotaÃ§Ãµes, guia do professor, a Ãºltima prova.
 1. Ainda nÃ£o construa nada. Primeiro me pergunte o que vocÃª precisa saber: como o professor avalia, como [quem] aprende, o que errou.
 2. Me dÃª 2 ou 3 opÃ§Ãµes de como organizar o guia, com o lado bom e o ruim de cada uma.
@@ -109,7 +109,7 @@ MÃ©todos: ver e redesenhar Â· explicar em voz alta Â· exemplo da vida real
 Precisa de Python 3.10 ou mais novo. Nenhum pacote para instalar.
 
 ```bash
-git clone https://github.com/inematds/estudo-do-seu-jeito && cd estudo-do-seu-jeito
+git clone https://github.com/linnoff88-dev/estudo-do-seu-jeito && cd estudo-do-seu-jeito
 python3 -m estudo demo --pasta ~/estudo-demo     # exemplo com dados inventados
 # abra ~/estudo-demo/guia.html no navegador
 python3 -m estudo placar --pasta ~/estudo-demo
@@ -143,7 +143,7 @@ Sem a skill, funciona colando o prompt 3 (`python3 -m estudo prompts 3`). No Cod
 ### Plugin do INTELECTO v2 (seu Jarvis)
 
 ```bash
-pip install git+https://github.com/inematds/estudo-do-seu-jeito
+pip install git+https://github.com/linnoff88-dev/estudo-do-seu-jeito
 INTELECTO_PLUGINS=estudo ESTUDO_PASTA=~/.estudo-do-seu-jeito python3 -m intelecto
 ```
 
