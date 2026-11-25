@@ -3,8 +3,8 @@
 Regra do jogo (é isso que o aluno e quem ensina veem no placar):
 1. Antes de estudar um objetivo, o método é escolhido e ANOTADO no diário (com o motivo).
 2. Depois vem o resultado (prática ou prova). Ele vale para o método anotado por último naquele objetivo.
-3. "Dominado" segue a regra do professor: se perder uma questão perde o objetivo inteiro, só conta acertar todas.
-4. Cada par (objetivo, método) conta uma vez: vale o resultado de prova, se houver; senão o último da prática.
+3. "Dominado" segue a regra do professor: se perder uma questêo perde o objetivo inteiro, só conta acertar todas.
+4. Cada par (objetivo, método) conta uma vez: vale o resultado de prova, se houver; senêo o último da prática.
 5. Com menos de MIN_N objetivos, o método aparece como "pouco dado" e nunca como o melhor.
 """
 from .dados import diario, registrar
@@ -69,7 +69,7 @@ def placar(materia: dict, p=None, eventos=None) -> dict:
 
 
 def proximo(materia: dict, oid: str, p=None, eventos=None) -> dict:
-    """Escolhe o método para o próximo estudo deste objetivo e diz o porquê (não grava)."""
+    """Escolhe o método para o próximo estudo deste objetivo e diz o porquê (nêo grava)."""
     eventos = diario(p) if eventos is None else eventos
     jeito = materia.get("aluno", {}).get("jeito", [])
     opcoes = candidatos(jeito)
@@ -87,7 +87,7 @@ def proximo(materia: dict, oid: str, p=None, eventos=None) -> dict:
         motivo = f"é o método com menos objetivos testados até agora ({n}); assim o teste fica justo"
     if ja_falhou:
         nomes = ", ".join(METODOS[m]["nome"] for m in sorted(ja_falhou))
-        motivo += f"; neste objetivo já não deu certo com: {nomes}"
+        motivo += f"; neste objetivo já nêo deu certo com: {nomes}"
     return {"objetivo": oid, "metodo": escolhido, "nome": METODOS[escolhido]["nome"],
             "faz": METODOS[escolhido]["faz"], "motivo": motivo, "opcoes": opcoes}
 
@@ -95,7 +95,7 @@ def proximo(materia: dict, oid: str, p=None, eventos=None) -> dict:
 def anotar_metodo(oid: str, metodo: str, motivo: str, p=None) -> dict:
     if metodo not in METODOS:
         from .dados import ErroEstudo
-        raise ErroEstudo(f"método '{metodo}' não existe (tem: {', '.join(METODOS)})")
+        raise ErroEstudo(f"método '{metodo}' nêo existe (tem: {', '.join(METODOS)})")
     return registrar({"tipo": "metodo", "objetivo": oid, "metodo": metodo, "motivo": motivo}, p)
 
 

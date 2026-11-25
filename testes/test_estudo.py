@@ -81,14 +81,14 @@ def test_guia_html_tem_dados_e_escapa_script(demo):
 
 def test_guia_recusa_com_questao_sem_prova(demo, capsys):
     m = dados.carregar()
-    m["objetivos"][0]["questoes"][0]["trecho"] = "isto não está escrito em lugar nenhum da fonte"
+    m["objetivos"][0]["questoes"][0]["trecho"] = "isto nêo está escrito em lugar nenhum da fonte"
     dados.salvar(m)
     assert principal(["guia"]) == 1
-    assert "não foi gerado" in capsys.readouterr().out
+    assert "nêo foi gerado" in capsys.readouterr().out
 
 
 # ---------- verificador ----------
-FONTES = {"a.txt": "A glicólise ocorre no citoplasma e não precisa de oxigênio."}
+FONTES = {"a.txt": "A glicólise ocorre no citoplasma e nêo precisa de oxigênio."}
 
 
 def q(**kw):
@@ -104,12 +104,12 @@ def test_trecho_que_existe_passa_mesmo_sem_acento():
 
 def test_trecho_inventado_e_recusado():
     erros, _ = verificador.conferir_questao(q(trecho="A glicólise ocorre na mitocôndria"), FONTES)
-    assert any("não existe" in e for e in erros)
+    assert any("nêo existe" in e for e in erros)
 
 
 def test_fonte_que_nao_existe_e_recusada():
     erros, _ = verificador.conferir_questao(q(fonte="livro.txt"), FONTES)
-    assert any("não está em fontes" in e for e in erros)
+    assert any("nêo está em fontes" in e for e in erros)
 
 
 def test_trecho_curto_demais_e_recusado():
@@ -140,14 +140,14 @@ def test_adicionar_recusa_arquivo_inteiro_se_uma_questao_falha(demo, tmp_path, c
 
 
 def test_adicionar_grava_e_substitui_pelo_id(demo, tmp_path):
-    novo = {"objetivos": [{"id": "respiracao", "titulo": "Respiração (refeito)", "fontes": ["respiracao.txt"],
+    novo = {"objetivos": [{"id": "respiracao", "titulo": "Respiraçêo (refeito)", "fontes": ["respiracao.txt"],
                            "questoes": [q(id="r9", fonte="respiracao.txt", trecho="Glicólise: ocorre no citoplasma")]}]}
     arq = tmp_path / "obj.json"
     arq.write_text(json.dumps(novo))
     assert principal(["adicionar", str(arq)]) == 0
     m = dados.carregar()
     assert len(m["objetivos"]) == 3
-    assert dados.objetivo(m, "respiracao")["titulo"] == "Respiração (refeito)"
+    assert dados.objetivo(m, "respiracao")["titulo"] == "Respiraçêo (refeito)"
 
 
 def test_respostas_do_aluno_erradas_sao_apontadas(demo):
@@ -239,7 +239,7 @@ def test_plano_comeca_pelo_que_errou_e_termina_em_revisao(demo):
     hoje = date.today()
     pl = plano.plano_prova(m, dados.diario(), hoje + timedelta(days=4), hoje)
     assert pl[0]["objetivos"][0] == "respiracao"
-    assert pl[-1]["tarefa"].startswith("revisão geral")
+    assert pl[-1]["tarefa"].startswith("revisêo geral")
 
 
 def test_plano_nao_deixa_objetivo_de_fora():
@@ -305,7 +305,7 @@ INTELECTO = Path.home() / "projetos" / "intelecto-v2"
 @pytest.fixture
 def intelecto():
     if not (INTELECTO / "intelecto").is_dir():
-        pytest.skip("intelecto-v2 não está nesta máquina")
+        pytest.skip("intelecto-v2 nêo está nesta máquina")
     sys.path.insert(0, str(INTELECTO))
     from intelecto.ferramentas import plugins
     from intelecto.config import Config
@@ -335,12 +335,12 @@ def test_plugin_executa_e_erro_vira_resultado(intelecto, demo):
     r = asyncio.run(fs["estudo_placar"].executar())
     assert r.ok and "pouco dado" in r.saida
     r = asyncio.run(fs["estudo_registrar_resultado"].executar(objetivo="nao-existe", acertos=1, total=1))
-    assert not r.ok and "não existe" in r.saida
+    assert not r.ok and "nêo existe" in r.saida
     r = asyncio.run(fs["estudo_proximo_metodo"].executar(objetivo="respiracao", anotar=True))
     assert r.ok and dados.diario()[-1]["tipo"] == "metodo"
 
 
-# ---------- portão: o repositório não cita a fonte de inspiração ----------
+# ---------- portêo: o repositório nêo cita a fonte de inspiraçêo ----------
 def test_repositorio_sem_fonte_de_inspiracao():
     proibido = re.compile("|".join(["hum" + "anly", "\\bam" + "y\\b", "\\bem" + "ma\\b", "simp" + "son", "o0o3" + "D"]), re.I)
     achados = []
@@ -352,9 +352,9 @@ def test_repositorio_sem_fonte_de_inspiracao():
 
 
 def test_resposta_bem_mais_longa_vira_aviso():
-    fontes = {"a.txt": "a proporção de fenótipos é 3 dominantes para 1 recessivo"}
+    fontes = {"a.txt": "a proporçêo de fenótipos é 3 dominantes para 1 recessivo"}
     qq = {"id": "q", "pergunta": "?", "opcoes": ["1 : 1", "3 dominantes para 1 recessivo", "1 : 2 : 1"],
-          "resposta": "3 dominantes para 1 recessivo", "fonte": "a.txt", "trecho": "proporção de fenótipos é 3 dominantes"}
+          "resposta": "3 dominantes para 1 recessivo", "fonte": "a.txt", "trecho": "proporçêo de fenótipos é 3 dominantes"}
     _, avisos = verificador.conferir_questao(qq, fontes)
     assert any("mais longa" in a for a in avisos)
 

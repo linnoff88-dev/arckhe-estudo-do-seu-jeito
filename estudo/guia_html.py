@@ -125,7 +125,7 @@ function situacaoLocal(oid){
   return D.situacao[oid] || "nao-testado";
 }
 const dominou = r => REGRA ? r.acertos === r.total : r.acertos / r.total >= 0.8;
-const rotulo = {dominado: ["ok", "dominado"], errou: ["bad", "ainda não"], "nao-testado": ["", "não testado"]};
+const rotulo = {dominado: ["ok", "dominado"], errou: ["bad", "ainda nêo"], "nao-testado": ["", "nêo testado"]};
 function chipSit(oid){ const [c, t] = rotulo[situacaoLocal(oid)]; return el("span", {class: "chip " + c}, t) }
 
 function diagrama(etapas, esconder){
@@ -143,7 +143,7 @@ function diagrama(etapas, esconder){
 
 function caixaMetodo(oid){
   const m = metodoDe(oid);
-  if (!m) return el("div", {class: "fonte"}, "Método desta semana: ainda não escolhido. Quem ensina escolhe com: python3 -m estudo proximo --objetivo " + oid);
+  if (!m) return el("div", {class: "fonte"}, "Método desta semana: ainda nêo escolhido. Quem ensina escolhe com: python3 -m estudo proximo --objetivo " + oid);
   const info = D.metodos[m];
   return el("div", {class: "fonte"}, el("b", {}, "Método desta semana: " + info.nome + ". "), info.faz, " ", el("span", {class: "mut"}, "Por quê: " + (D.atual[oid].motivo || info.porque)));
 }
@@ -196,16 +196,16 @@ const TELAS = {
       const linhas = [];
       for (let i = 0; i < dias; i++){
         const d = new Date(hoje.getTime() + i * 864e5).toLocaleDateString("pt-BR", {weekday: "short", day: "2-digit", month: "2-digit"});
-        if (i === dias - 1) { linhas.push([d, "revisão geral: só as questões, sem consultar", fila]); continue }
+        if (i === dias - 1) { linhas.push([d, "revisêo geral: só as questões, sem consultar", fila]); continue }
         let bloco = pend.slice(i * porDia, (i + 1) * porDia), tarefa = "estudar com o método da semana e fazer as questões";
-        if (!bloco.length && rev.length) { bloco = [rev[i % rev.length]]; tarefa = "revisar um objetivo já dominado (para não esquecer)" }
+        if (!bloco.length && rev.length) { bloco = [rev[i % rev.length]]; tarefa = "revisar um objetivo já dominado (para nêo esquecer)" }
         if (bloco.length) linhas.push([d, tarefa, bloco]);
       }
       saida.replaceChildren(el("div", {class: "rolar"}, el("table", {}, el("tr", {}, el("th", {}, "Dia"), el("th", {}, "O quê"), el("th", {}, "Objetivos")),
         linhas.map(([d, t, b]) => el("tr", {}, el("td", {}, d), el("td", {}, t), el("td", {}, b.map(o => o.titulo).join("; ")))))));
     }}});
     return [el("div", {class: "card"}, el("h2", {}, "Plano até a prova"),
-      el("p", {class: "mut"}, "Primeiro o que você errou, depois o que ainda não testou; no último dia, só questões sem consultar."),
+      el("p", {class: "mut"}, "Primeiro o que você errou, depois o que ainda nêo testou; no último dia, só questões sem consultar."),
       el("p", {}, "Data da prova: ", data), saida)];
   },
   resumo(){
@@ -226,18 +226,18 @@ const TELAS = {
         "Antes de estudar um objetivo, o método é escolhido e anotado, com o motivo.",
         "O resultado conta para o método anotado por último naquele objetivo.",
         REGRA ? "Dominado = acertar todas as questões do objetivo (a regra do professor)." : "Dominado = acertar 80% ou mais.",
-        "Com menos de " + P.min_n + " objetivos, o método fica como \"pouco dado\" e não é chamado de melhor.",
-        "Este placar mostra o que já foi importado no kit. Resultados de hoje ainda não importados: " + resultados.length + "."
+        "Com menos de " + P.min_n + " objetivos, o método fica como \"pouco dado\" e nêo é chamado de melhor.",
+        "Este placar mostra o que já foi importado no kit. Resultados de hoje ainda nêo importados: " + resultados.length + "."
       ].map(t => el("li", {}, t))))];
   },
   dicas(){
     const d = [
       ["Tente lembrar antes de reler", "Fazer as questões sem consultar fixa mais do que ler de novo."],
       ["Espalhe o estudo", "Um pouco por dia, vários dias, rende mais que uma noite inteira antes da prova."],
-      ["Misture os objetivos", "Alternar assuntos na mesma sessão ajuda a saber qual regra usar em cada questão."],
+      ["Misture os objetivos", "Alternar assuntos na mesma sessêo ajuda a saber qual regra usar em cada questêo."],
       ["Explique com as suas palavras", "Se travou ao explicar, achou o ponto que falta."],
       ["Desenhe o processo", "Esquema com setas, de memória, e depois compare."],
-      ["Corrija na fonte", "Errou? Leia o trecho da fonte que vem com a resposta, não só o gabarito."]
+      ["Corrija na fonte", "Errou? Leia o trecho da fonte que vem com a resposta, nêo só o gabarito."]
     ];
     return [el("div", {class: "grid"}, d.map(([t, x]) => el("div", {class: "card"}, el("h3", {}, t), el("p", {class: "mut"}, x))))];
   },
@@ -260,7 +260,7 @@ function questoes(o){
     if (respondidas < qs.length) return;
     const r = {objetivo: o.id, acertos, total: qs.length, origem: "pratica", quem: "aluno", metodo: metodoDe(o.id) || null, quando: new Date().toISOString()};
     resultados.push(r); guarda.gravar("resultados", resultados);
-    fim.replaceChildren(el("p", {}, el("b", {}, acertos + " de " + qs.length + ". "), dominou(r) ? "Objetivo dominado." : (REGRA ? "Pela regra do professor, errar uma questão perde o objetivo inteiro: estude o trecho da fonte e tente de novo amanhã." : "Ainda não chegou a 80%.")), el("p", {class: "mut"}, "Resultado guardado. Mande para o kit na aba Exportar."));
+    fim.replaceChildren(el("p", {}, el("b", {}, acertos + " de " + qs.length + ". "), dominou(r) ? "Objetivo dominado." : (REGRA ? "Pela regra do professor, errar uma questêo perde o objetivo inteiro: estude o trecho da fonte e tente de novo amanhê." : "Ainda nêo chegou a 80%.")), el("p", {class: "mut"}, "Resultado guardado. Mande para o kit na aba Exportar."));
   };
   return [el("p", {class: "mut"}, "Responda sem consultar. As opções mudam de ordem cada vez que você abre. Depois de cada resposta aparece o trecho da fonte que prova a certa."),
     ...qs.map(q => {
@@ -273,7 +273,7 @@ function questoes(o){
           if (caixa.dataset.feito) return; caixa.dataset.feito = 1;
           const ok = op === q.resposta;
           bts.forEach(b => { if (b.textContent === q.resposta) b.classList.add("certo"); else if (b.textContent === op) b.classList.add("errado") });
-          caixa.append(el("p", {}, ok ? "Certo." : "Não. A certa é: " + q.resposta), prova()); marcar(ok);
+          caixa.append(el("p", {}, ok ? "Certo." : "Nêo. A certa é: " + q.resposta), prova()); marcar(ok);
         }}}, op));
         caixa.append(...bts);
       } else {
@@ -309,7 +309,7 @@ function trocar(t){
 }
 document.getElementById("titulo").textContent = M.nome;
 const aluno = (M.aluno || {}).nome;
-document.getElementById("sub").textContent = (aluno ? "Guia de " + aluno + " · " : "") + (M.exemplo ? "exemplo com dados inventados · " : "") + "versão " + D.versao;
+document.getElementById("sub").textContent = (aluno ? "Guia de " + aluno + " · " : "") + (M.exemplo ? "exemplo com dados inventados · " : "") + "versêo " + D.versao;
 const abas = document.getElementById("abas");
 Object.entries(NOMES).forEach(([k, v]) => abas.append(el("button", {class: "tab", "data-t": k, on: {click: () => trocar(k)}}, v)));
 abas.append(el("button", {class: "tab", on: {click: () => { document.body.classList.toggle("light"); guarda.gravar("tema", document.body.classList.contains("light") ? "claro" : "escuro") }}}, "Claro/escuro"));

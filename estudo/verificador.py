@@ -1,7 +1,7 @@
-"""Conferência na fonte: nenhuma questão entra sem o trecho que a prova, e o trecho tem de existir de verdade.
+"""Conferência na fonte: nenhuma questêo entra sem o trecho que a prova, e o trecho tem de existir de verdade.
 
-A IA erra com confiança. Por isso o kit não cria questão sozinho e não aceita questão "solta":
-cada questão diz de qual fonte saiu e copia o trecho; o verificador procura esse trecho no texto da fonte.
+A IA erra com confiança. Por isso o kit nêo cria questêo sozinho e nêo aceita questêo "solta":
+cada questêo diz de qual fonte saiu e copia o trecho; o verificador procura esse trecho no texto da fonte.
 """
 from .dados import normalizar
 
@@ -14,7 +14,7 @@ def _palavras_chave(texto: str) -> set:
 
 
 def conferir_questao(q: dict, fontes: dict) -> tuple:
-    """Devolve (erros, avisos) de uma questão."""
+    """Devolve (erros, avisos) de uma questêo."""
     erros, avisos = [], []
     qid = q.get("id", "?")
     for campo in ("id", "pergunta", "resposta", "fonte", "trecho"):
@@ -24,16 +24,16 @@ def conferir_questao(q: dict, fontes: dict) -> tuple:
         return erros, avisos
     fonte = q["fonte"]
     if fonte not in fontes:
-        erros.append(f"{qid}: a fonte '{fonte}' não está em fontes/ (tem: {', '.join(fontes) or 'nenhuma'})")
+        erros.append(f"{qid}: a fonte '{fonte}' nêo está em fontes/ (tem: {', '.join(fontes) or 'nenhuma'})")
         return erros, avisos
     trecho = normalizar(q["trecho"])
     if len(trecho.split()) < MIN_PALAVRAS_TRECHO:
         erros.append(f"{qid}: o trecho é curto demais para provar alguma coisa (mínimo {MIN_PALAVRAS_TRECHO} palavras)")
     elif trecho not in normalizar(fontes[fonte]):
-        erros.append(f"{qid}: o trecho não existe em {fonte}. Copie o trecho exato da fonte ou tire a questão")
+        erros.append(f"{qid}: o trecho nêo existe em {fonte}. Copie o trecho exato da fonte ou tire a questêo")
     if q.get("opcoes"):
         if normalizar(q["resposta"]) not in [normalizar(o) for o in q["opcoes"]]:
-            erros.append(f"{qid}: a resposta não é uma das opções")
+            erros.append(f"{qid}: a resposta nêo é uma das opções")
     if q.get("opcoes") and len(q["opcoes"]) >= 3:
         outras = sorted((len(o) for o in q["opcoes"] if normalizar(o) != normalizar(q["resposta"])), reverse=True)
         if outras and len(q["resposta"]) >= 1.4 * outras[0] and len(q["resposta"]) - outras[0] >= 6:
@@ -56,13 +56,13 @@ def conferir_objetivos(objetivos: list, fontes: dict) -> tuple:
             erros.append(f"objetivo repetido: {oid}")
         vistos.add(oid)
         if not o.get("questoes"):
-            avisos.append(f"{oid}: sem questões ainda (o guia mostra, mas não dá para medir)")
+            avisos.append(f"{oid}: sem questões ainda (o guia mostra, mas nêo dá para medir)")
         for f in o.get("fontes", []):
             if f not in fontes:
-                erros.append(f"{oid}: a leitura cita a fonte '{f}', que não está em fontes/")
+                erros.append(f"{oid}: a leitura cita a fonte '{f}', que nêo está em fontes/")
         for q in o.get("questoes", []):
             if q.get("id") in vistos:
-                erros.append(f"{oid}: questão repetida: {q.get('id')}")
+                erros.append(f"{oid}: questêo repetida: {q.get('id')}")
             vistos.add(q.get("id"))
             e, a = conferir_questao(q, fontes)
             erros += [f"{oid}/{x}" for x in e]
@@ -71,12 +71,12 @@ def conferir_objetivos(objetivos: list, fontes: dict) -> tuple:
 
 
 def conferir_respostas(materia: dict, respostas: dict) -> list:
-    """Respostas que o aluno preencheu num guia × gabarito conferido. Devolve só as que precisam de atenção."""
+    """Respostas que o aluno preencheu num guia × gabarito conferido. Devolve só as que precisam de atençêo."""
     gabarito = {q["id"]: (o["id"], q) for o in materia.get("objetivos", []) for q in o.get("questoes", [])}
     alertas = []
     for qid, dada in respostas.items():
         if qid not in gabarito:
-            alertas.append({"questao": qid, "problema": "questão não existe no guia"})
+            alertas.append({"questao": qid, "problema": "questêo nêo existe no guia"})
             continue
         oid, q = gabarito[qid]
         certa = q["resposta"]
@@ -88,5 +88,5 @@ def conferir_respostas(materia: dict, respostas: dict) -> list:
         if not ok:
             alertas.append({"questao": qid, "objetivo": oid, "resposta_do_aluno": dada, "na_fonte": certa,
                             "fonte": q["fonte"], "trecho": q["trecho"],
-                            "problema": "a resposta preenchida não bate com a fonte; não use isso como material de estudo sem corrigir"})
+                            "problema": "a resposta preenchida nêo bate com a fonte; nêo use isso como material de estudo sem corrigir"})
     return alertas

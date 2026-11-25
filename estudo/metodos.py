@@ -5,13 +5,13 @@ METODOS = {
         "nome": "Ver e redesenhar",
         "faz": "Olha o esquema do processo, fecha a página e redesenha de memória; depois compara e corrige.",
         "jeito": ["visual"],
-        "porque": "Desenhar de memória obriga a lembrar as etapas na ordem, não só a reconhecê-las.",
+        "porque": "Desenhar de memória obriga a lembrar as etapas na ordem, nêo só a reconhecê-las.",
     },
     "explicar-falando": {
         "nome": "Explicar em voz alta",
         "faz": "Explica o objetivo para quem ensina (ou para o celular) com as próprias palavras, sem ler.",
         "jeito": ["falado"],
-        "porque": "Onde a explicação trava é exatamente o ponto que ainda não entrou.",
+        "porque": "Onde a explicaçêo trava é exatamente o ponto que ainda nêo entrou.",
     },
     "vida-real": {
         "nome": "Exemplo da vida real",
@@ -21,21 +21,21 @@ METODOS = {
     },
     "pratica-sem-consulta": {
         "nome": "Questões sem consultar",
-        "faz": "Responde as questões do objetivo sem olhar nada; só depois confere e lê a explicação do erro.",
+        "faz": "Responde as questões do objetivo sem olhar nada; só depois confere e lê a explicaçêo do erro.",
         "jeito": ["escrita", "visual", "falado", "vida-real"],
-        "porque": "Tentar lembrar (prática de recuperação) fixa mais do que reler.",
+        "porque": "Tentar lembrar (prática de recuperaçêo) fixa mais do que reler.",
     },
     "releitura": {
         "nome": "Reler e grifar (controle)",
         "faz": "Relê a matéria e grifa o importante, do jeito de sempre.",
         "jeito": ["escrita"],
-        "porque": "É o jeito de sempre; serve de comparação para ver se os outros fazem diferença.",
+        "porque": "É o jeito de sempre; serve de comparaçêo para ver se os outros fazem diferença.",
     },
 }
 
 JEITOS = {
     "visual": "aprende vendo: esquema, cor, desenho",
-    "falado": "aprende ouvindo e falando: conversa, explicação",
+    "falado": "aprende ouvindo e falando: conversa, explicaçêo",
     "vida-real": "aprende com exemplo concreto do dia a dia",
     "escrita": "aprende lendo e escrevendo, repetindo",
 }

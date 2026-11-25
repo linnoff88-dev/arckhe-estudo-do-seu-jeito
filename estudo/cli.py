@@ -82,7 +82,7 @@ def _demo_diario(p):
 def cmd_demo(a):
     d = pasta(a.pasta)
     if (d / "materia.json").exists() and not a.forcar:
-        raise ErroEstudo(f"já existe uma matéria em {d}; o demo não sobrescreve (use --pasta /tmp/demo-estudo ou --forcar)")
+        raise ErroEstudo(f"já existe uma matéria em {d}; o demo nêo sobrescreve (use --pasta /tmp/demo-estudo ou --forcar)")
     ex = resources.files("estudo") / "exemplo"
     d.mkdir(parents=True, exist_ok=True)
     (d / "fontes").mkdir(exist_ok=True)
@@ -129,7 +129,7 @@ def cmd_adicionar(a):
     try:
         novo = json.loads(Path(a.arquivo).read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as e:
-        raise ErroEstudo(f"não consegui ler {a.arquivo}: {e}")
+        raise ErroEstudo(f"nêo consegui ler {a.arquivo}: {e}")
     novos = novo.get("objetivos", novo if isinstance(novo, list) else [])
     erros, avisos = conferir_objetivos(novos, fontes(a.pasta))
     if erros:
@@ -184,7 +184,7 @@ def cmd_proximo(a):
             r["anotado"] = True
         res.append(r)
     texto = "\n".join(f"{r['objetivo']}: {r['nome']} — {r['faz']}\n   por quê: {r['motivo']}" + ("\n   (anotado no diário)" if r.get("anotado") else "") for r in res)
-    _saida(a, res, texto or "Todos os objetivos estão dominados. Use o plano da prova para revisar.")
+    _saida(a, res, texto or "Todos os objetivos estêo dominados. Use o plano da prova para revisar.")
 
 
 def cmd_metodo(a):
@@ -200,7 +200,7 @@ def cmd_resultado(a):
     anotar_resultado(a.objetivo, a.acertos, a.total, a.origem, a.quem, a.pasta, a.nota or "")
     regra = m.get("professor", {}).get("regra_objetivo_inteiro", True)
     from .experimento import dominou
-    print(f"Anotado: {a.objetivo} {a.acertos}/{a.total} ({a.origem}) → {'dominado' if dominou(a.acertos, a.total, regra) else 'ainda não'}.")
+    print(f"Anotado: {a.objetivo} {a.acertos}/{a.total} ({a.origem}) → {'dominado' if dominou(a.acertos, a.total, regra) else 'ainda nêo'}.")
 
 
 def cmd_importar(a):
@@ -208,7 +208,7 @@ def cmd_importar(a):
     try:
         dados = json.loads(Path(a.arquivo).read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as e:
-        raise ErroEstudo(f"não consegui ler {a.arquivo}: {e}")
+        raise ErroEstudo(f"nêo consegui ler {a.arquivo}: {e}")
     ids = {o["id"] for o in m.get("objetivos", [])}
     atual = {}
     for ev in diario(a.pasta):
@@ -218,7 +218,7 @@ def cmd_importar(a):
     for r in dados.get("resultados", []):
         oid = r.get("objetivo")
         if oid not in ids:
-            pulados.append(f"{oid}: objetivo não existe")
+            pulados.append(f"{oid}: objetivo nêo existe")
             continue
         met = r.get("metodo")
         if met and met in METODOS and atual.get(oid) != met:
@@ -246,7 +246,7 @@ def cmd_respostas(a):
     try:
         resp = json.loads(Path(a.arquivo).read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as e:
-        raise ErroEstudo(f"não consegui ler {a.arquivo}: {e}")
+        raise ErroEstudo(f"nêo consegui ler {a.arquivo}: {e}")
     alertas = conferir_respostas(m, resp)
     texto = "\n".join(f"{x['questao']}: respondeu \"{x.get('resposta_do_aluno', '')}\"; a fonte diz \"{x.get('na_fonte', '')}\""
                       f"\n   trecho ({x.get('fonte', '')}): {x.get('trecho', '')}\n   {x['problema']}" for x in alertas)
@@ -272,7 +272,7 @@ def cmd_guia(a):
     if erros and not a.mesmo_com_erro:
         for e in erros:
             print("ERRO  " + e)
-        print("O guia não foi gerado: há questão sem prova na fonte. Corrija (python3 -m estudo conferir).")
+        print("O guia nêo foi gerado: há questêo sem prova na fonte. Corrija (python3 -m estudo conferir).")
         return 1
     saida = Path(a.saida) if a.saida else pasta(a.pasta) / "guia.html"
     saida.write_text(montar(m, a.pasta), encoding="utf-8")
@@ -286,7 +286,7 @@ def cmd_prompts(a):
     if a.numero:
         alvo = [f for f in arquivos if f.name.startswith(f"{a.numero}-")]
         if not alvo:
-            raise ErroEstudo(f"não há prompt {a.numero} (tem 1 a {len(arquivos)})")
+            raise ErroEstudo(f"nêo há prompt {a.numero} (tem 1 a {len(arquivos)})")
         print(alvo[0].read_text(encoding="utf-8"))
     else:
         for f in arquivos:
@@ -306,7 +306,7 @@ def principal(argv=None):
 
     def c(nome, fn, ajuda):
         s = sub.add_parser(nome, help=ajuda)
-        s.add_argument("--pasta", help="pasta da matéria (padrão: ESTUDO_PASTA ou ~/.estudo-do-seu-jeito)")
+        s.add_argument("--pasta", help="pasta da matéria (padrêo: ESTUDO_PASTA ou ~/.estudo-do-seu-jeito)")
         s.add_argument("--json", action="store_true", help="saída em JSON (para agentes)")
         s.set_defaults(fn=fn)
         return s
@@ -314,8 +314,8 @@ def principal(argv=None):
     s = c("nova", cmd_nova, "cria uma matéria vazia"); s.add_argument("nome"); s.add_argument("--forcar", action="store_true")
     s = c("demo", cmd_demo, "cria a matéria de exemplo (dados inventados) e o guia"); s.add_argument("--forcar", action="store_true")
     c("passos", cmd_passos, "a fórmula em 8 passos e o que falta")
-    c("conferir", cmd_conferir, "confere cada questão na fonte")
-    s = c("adicionar", cmd_adicionar, "grava objetivos de um JSON (recusa questão sem prova na fonte)"); s.add_argument("arquivo")
+    c("conferir", cmd_conferir, "confere cada questêo na fonte")
+    s = c("adicionar", cmd_adicionar, "grava objetivos de um JSON (recusa questêo sem prova na fonte)"); s.add_argument("arquivo")
     s = c("semana", cmd_semana, "registra a fonte nova da semana"); s.add_argument("arquivo"); s.add_argument("--forcar", action="store_true")
     s = c("tutor", cmd_tutor, "anota que quem ensina estudou o objetivo"); s.add_argument("--objetivo", required=True); s.add_argument("--minutos", type=int, default=60)
     s = c("proximo", cmd_proximo, "sugere o método de estudo e diz o porquê"); s.add_argument("--objetivo"); s.add_argument("--anotar", action="store_true", help="grava a escolha no diário")

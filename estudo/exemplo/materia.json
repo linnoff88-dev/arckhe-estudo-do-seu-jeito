@@ -2,7 +2,7 @@
   "nome": "Biologia — exemplo inventado",
   "exemplo": true,
   "professor": {
-    "como_avalia": "A matéria é dividida em objetivos de aprendizagem. Se o aluno erra uma questão do objetivo, perde o objetivo inteiro. Na prova seguinte ele pode refazer os objetivos perdidos.",
+    "como_avalia": "A matéria é dividida em objetivos de aprendizagem. Se o aluno erra uma questêo do objetivo, perde o objetivo inteiro. Na prova seguinte ele pode refazer os objetivos perdidos.",
     "regra_objetivo_inteiro": true,
     "estilo_aula": "Slides com muito texto, quase sem imagem e pouco tempo para praticar."
   },
@@ -27,7 +27,7 @@
       "fontes": [
         "fotossintese.txt"
       ],
-      "leitura": "A fotossíntese acontece no cloroplasto e tem duas etapas. Na etapa fotoquímica, nos tilacoides, a luz quebra a água (fotólise), libera oxigênio e gera ATP e NADPH. No ciclo de Calvin, no estroma, esse ATP e esse NADPH são usados para fixar o gás carbônico e fazer glicose.",
+      "leitura": "A fotossíntese acontece no cloroplasto e tem duas etapas. Na etapa fotoquímica, nos tilacoides, a luz quebra a água (fotólise), libera oxigênio e gera ATP e NADPH. No ciclo de Calvin, no estroma, esse ATP e esse NADPH sêo usados para fixar o gás carbônico e fazer glicose.",
       "etapas": [
         {
           "nome": "Etapa fotoquímica",
@@ -42,10 +42,10 @@
           "sai": "glicose"
         }
       ],
-      "vida_real": "Pense numa padaria com dois turnos. O primeiro turno (fotoquímica) só funciona com a luz acesa e enche as baterias (ATP e NADPH). O segundo turno (Calvin) usa essas baterias para montar o pão (glicose) com a farinha que vem do ar (gás carbônico).",
+      "vida_real": "Pense numa padaria com dois turnos. O primeiro turno (fotoquímica) só funciona com a luz acesa e enche as baterias (ATP e NADPH). O segundo turno (Calvin) usa essas baterias para montar o pêo (glicose) com a farinha que vem do ar (gás carbônico).",
       "pegadinhas": [
-        "O oxigênio que sai vem da água, não do gás carbônico.",
-        "O ciclo de Calvin não usa luz diretamente, mas para sem a etapa fotoquímica."
+        "O oxigênio que sai vem da água, nêo do gás carbônico.",
+        "O ciclo de Calvin nêo usa luz diretamente, mas para sem a etapa fotoquímica."
       ],
       "questoes": [
         {
@@ -74,7 +74,7 @@
           "resposta": "Da água",
           "explicacao": "A fotólise quebra a água e solta o oxigênio.",
           "fonte": "fotossintese.txt",
-          "trecho": "O oxigênio liberado na fotossíntese vem da água, e não do gás carbônico"
+          "trecho": "O oxigênio liberado na fotossíntese vem da água, e nêo do gás carbônico"
         },
         {
           "id": "f3",
@@ -88,7 +88,7 @@
     },
     {
       "id": "respiracao",
-      "titulo": "Respiração celular: as três etapas",
+      "titulo": "Respiraçêo celular: as três etapas",
       "topicos": [
         "Glicólise",
         "Ciclo de Krebs",
@@ -97,7 +97,7 @@
       "fontes": [
         "respiracao.txt"
       ],
-      "leitura": "A respiração aeróbica quebra a glicose para fazer ATP. A glicólise, no citoplasma, transforma uma glicose em dois piruvatos e não precisa de oxigênio. O ciclo de Krebs, na matriz da mitocôndria, solta gás carbônico. A cadeia transportadora, na membrana interna da mitocôndria, usa o oxigênio como aceptor final, forma água e produz a maior parte do ATP.",
+      "leitura": "A respiraçêo aeróbica quebra a glicose para fazer ATP. A glicólise, no citoplasma, transforma uma glicose em dois piruvatos e nêo precisa de oxigênio. O ciclo de Krebs, na matriz da mitocôndria, solta gás carbônico. A cadeia transportadora, na membrana interna da mitocôndria, usa o oxigênio como aceptor final, forma água e produz a maior parte do ATP.",
       "etapas": [
         {
           "nome": "Glicólise",
@@ -120,7 +120,7 @@
       ],
       "vida_real": "É como um carro: a glicólise é dar a partida (gasta pouco, rende pouco), o ciclo de Krebs é o motor soltando gás pelo escapamento (gás carbônico) e a cadeia transportadora é a estrada aberta, onde o carro rende de verdade, mas só com oxigênio.",
       "pegadinhas": [
-        "A glicólise não precisa de oxigênio.",
+        "A glicólise nêo precisa de oxigênio.",
         "Planta também respira, de dia e de noite."
       ],
       "questoes": [
@@ -162,7 +162,7 @@
           "resposta": "Falso",
           "explicacao": "Respiram de dia e de noite; de dia a fotossíntese só esconde isso.",
           "fonte": "respiracao.txt",
-          "trecho": "as plantas também fazem respiração celular, de dia e de noite"
+          "trecho": "as plantas também fazem respiraçêo celular, de dia e de noite"
         }
       ]
     },
@@ -177,7 +177,7 @@
       "fontes": [
         "genetica.txt"
       ],
-      "leitura": "Alelos são versões de um mesmo gene. Homozigoto tem dois alelos iguais (AA ou aa); heterozigoto tem dois diferentes (Aa). O dominante aparece com uma dose só; o recessivo só aparece em dose dupla. No cruzamento Aa x Aa, a proporção esperada é 1 AA : 2 Aa : 1 aa, ou seja, 3 com a característica dominante para 1 com a recessiva.",
+      "leitura": "Alelos sêo versões de um mesmo gene. Homozigoto tem dois alelos iguais (AA ou aa); heterozigoto tem dois diferentes (Aa). O dominante aparece com uma dose só; o recessivo só aparece em dose dupla. No cruzamento Aa x Aa, a proporçêo esperada é 1 AA : 2 Aa : 1 aa, ou seja, 3 com a característica dominante para 1 com a recessiva.",
       "etapas": [
         {
           "nome": "Pais",
@@ -200,7 +200,7 @@
       ],
       "vida_real": "Cada pai tem duas cartas, uma A e uma a, e entrega uma ao acaso. Em quatro rodadas, o esperado é sair uma vez AA, duas vezes Aa e uma vez aa. Mas, como em qualquer sorteio, com poucas rodadas pode dar diferente.",
       "pegadinhas": [
-        "3 para 1 é o esperado, não garantia com poucos filhotes.",
+        "3 para 1 é o esperado, nêo garantia com poucos filhotes.",
         "Aa mostra a característica dominante, mesmo carregando o recessivo."
       ],
       "questoes": [
@@ -219,7 +219,7 @@
         },
         {
           "id": "g2",
-          "pergunta": "No cruzamento Aa x Aa, qual a proporção esperada de fenótipos?",
+          "pergunta": "No cruzamento Aa x Aa, qual a proporçêo esperada de fenótipos?",
           "opcoes": [
             "1 dominante para 1 recessivo",
             "3 dominantes para 1 recessivo",
@@ -229,7 +229,7 @@
           "resposta": "3 dominantes para 1 recessivo",
           "explicacao": "1 : 2 : 1 é a dos genótipos; a dos fenótipos é 3 : 1.",
           "fonte": "genetica.txt",
-          "trecho": "a proporção de fenótipos é 3 dominantes para 1 recessivo"
+          "trecho": "a proporçêo de fenótipos é 3 dominantes para 1 recessivo"
         },
         {
           "id": "g3",

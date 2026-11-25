@@ -1,12 +1,12 @@
 """Onde ficam os dados de uma matéria e como ler/gravar.
 
-Uma pasta por matéria (padrão ~/.estudo-do-seu-jeito, ou ESTUDO_PASTA, ou --pasta):
+Uma pasta por matéria (padrêo ~/.estudo-do-seu-jeito, ou ESTUDO_PASTA, ou --pasta):
   materia.json   professor, aluno, objetivos e questões
   fontes/*.txt   o texto das fontes (livro, anotações transcritas, guia do professor)
   diario.jsonl   tudo o que aconteceu, uma linha por evento, só acrescenta
   plano.md       o resumo do plano combinado antes de construir
 
-Nada disso vai para o repositório: são dados do aluno.
+Nada disso vai para o repositório: sêo dados do aluno.
 """
 import json
 import os
@@ -50,11 +50,11 @@ def materia_vazia(nome: str) -> dict:
 def carregar(p=None) -> dict:
     arq = pasta(p) / "materia.json"
     if not arq.exists():
-        raise ErroEstudo(f"não achei {arq}. Crie com: python3 -m estudo nova \"Nome da matéria\" (ou rode o demo)")
+        raise ErroEstudo(f"nêo achei {arq}. Crie com: python3 -m estudo nova \"Nome da matéria\" (ou rode o demo)")
     try:
         return json.loads(arq.read_text(encoding="utf-8"))
     except json.JSONDecodeError as e:
-        raise ErroEstudo(f"{arq} não é um JSON válido: {e}")
+        raise ErroEstudo(f"{arq} nêo é um JSON válido: {e}")
 
 
 def salvar(materia: dict, p=None) -> Path:
@@ -95,7 +95,7 @@ def diario(p=None) -> list:
             try:
                 eventos.append(json.loads(linha))
             except json.JSONDecodeError:
-                raise ErroEstudo(f"diario.jsonl linha {n} está quebrada; corrija à mão (o resto está intacto)")
+                raise ErroEstudo(f"diario.jsonl linha {n} está quebrada; corrija à mêo (o resto está intacto)")
     return eventos
 
 
@@ -104,4 +104,4 @@ def objetivo(materia: dict, oid: str) -> dict:
         if o.get("id") == oid:
             return o
     ids = ", ".join(o.get("id", "?") for o in materia.get("objetivos", [])) or "nenhum"
-    raise ErroEstudo(f"objetivo '{oid}' não existe (tem: {ids})")
+    raise ErroEstudo(f"objetivo '{oid}' nêo existe (tem: {ids})")

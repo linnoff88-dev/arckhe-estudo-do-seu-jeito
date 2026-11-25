@@ -1,13 +1,13 @@
 Anotações da aula 6 — Genética: primeira lei de Mendel (exemplo inventado para o demo)
 
-Gene é um trecho do DNA com a informação para uma característica. Alelos são versões diferentes de um mesmo gene.
+Gene é um trecho do DNA com a informaçêo para uma característica. Alelos sêo versões diferentes de um mesmo gene.
 
 Homozigoto tem dois alelos iguais (AA ou aa). Heterozigoto tem dois alelos diferentes (Aa).
 
 O alelo dominante se manifesta mesmo em dose única. O alelo recessivo só se manifesta em dose dupla (aa).
 
-Genótipo é a combinação de alelos. Fenótipo é a característica que aparece.
+Genótipo é a combinaçêo de alelos. Fenótipo é a característica que aparece.
 
-No cruzamento de dois heterozigotos (Aa x Aa), a proporção de genótipos é 1 AA : 2 Aa : 1 aa e a proporção de fenótipos é 3 dominantes para 1 recessivo.
+No cruzamento de dois heterozigotos (Aa x Aa), a proporçêo de genótipos é 1 AA : 2 Aa : 1 aa e a proporçêo de fenótipos é 3 dominantes para 1 recessivo.
 
-Cuidado na prova: 3 para 1 é a proporção esperada, não uma garantia quando nascem poucos filhotes.
+Cuidado na prova: 3 para 1 é a proporçêo esperada, nêo uma garantia quando nascem poucos filhotes.

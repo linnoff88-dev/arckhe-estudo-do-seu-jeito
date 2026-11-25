@@ -1,13 +1,13 @@
-Anotações da aula 5 — Respiração celular (exemplo inventado para o demo)
+Anotações da aula 5 — Respiraçêo celular (exemplo inventado para o demo)
 
-A respiração celular aeróbica quebra a glicose para liberar energia na forma de ATP.
+A respiraçêo celular aeróbica quebra a glicose para liberar energia na forma de ATP.
 
-Glicólise: ocorre no citoplasma. Uma glicose vira duas moléculas de piruvato, com saldo de 2 ATP. A glicólise não precisa de oxigênio.
+Glicólise: ocorre no citoplasma. Uma glicose vira duas moléculas de piruvato, com saldo de 2 ATP. A glicólise nêo precisa de oxigênio.
 
 Ciclo de Krebs: ocorre na matriz da mitocôndria e libera gás carbônico.
 
 Cadeia transportadora de elétrons: fica na membrana interna da mitocôndria. O oxigênio é o aceptor final de elétrons e forma água. É a etapa que produz a maior parte do ATP.
 
-Equação geral: C6H12O6 + 6 O2 → 6 CO2 + 6 H2O + energia.
+Equaçêo geral: C6H12O6 + 6 O2 → 6 CO2 + 6 H2O + energia.
 
-Cuidado na prova: as plantas também fazem respiração celular, de dia e de noite. A fotossíntese não substitui a respiração.
+Cuidado na prova: as plantas também fazem respiraçêo celular, de dia e de noite. A fotossíntese nêo substitui a respiraçêo.

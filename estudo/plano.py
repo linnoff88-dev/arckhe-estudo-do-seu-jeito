@@ -1,4 +1,4 @@
-"""Plano antes da prova: espalha os objetivos ainda não dominados pelos dias que faltam, os mais fracos primeiro."""
+"""Plano antes da prova: espalha os objetivos ainda nêo dominados pelos dias que faltam, os mais fracos primeiro."""
 from datetime import date, timedelta
 
 from .experimento import _pares
@@ -33,12 +33,12 @@ def plano_prova(materia: dict, eventos: list, prova: date, hoje: date = None, po
     for i in range(dias):
         dia = hoje + timedelta(days=i)
         if i == dias - 1:
-            plano.append({"dia": dia.isoformat(), "tarefa": "revisão geral: só as questões, sem consultar", "objetivos": [o["id"] for o in fila]})
+            plano.append({"dia": dia.isoformat(), "tarefa": "revisêo geral: só as questões, sem consultar", "objetivos": [o["id"] for o in fila]})
             continue
         bloco = pendentes[i * por_dia:(i + 1) * por_dia]
         if not bloco and revisao:
             bloco = [revisao[i % len(revisao)]]
-            tarefa = "revisar um objetivo já dominado (para não esquecer)"
+            tarefa = "revisar um objetivo já dominado (para nêo esquecer)"
         else:
             tarefa = "estudar com o método sugerido e fazer as questões"
         if bloco:
